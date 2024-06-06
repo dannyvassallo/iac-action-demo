@@ -1,0 +1,15 @@
+name: CloudFormation Guard Push
+
+on:
+  push:
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    name: CloudFormation Guard Push
+    steps:
+      - name: CloudFormation Guard Push
+        uses: aws-cloudformation/cloudformation-guard@action-v0.0.2
+        with:
+          rules: 'resources/validate/rules'
+          data: 'resources/validate/data'
