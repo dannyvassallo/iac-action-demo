@@ -1,7 +1,8 @@
 name: CloudFormation Guard Analysis
 
 on:
-  push:
+  schedule:
+    - cron: '*/15 * * * *'
 
 jobs:
   guard:
